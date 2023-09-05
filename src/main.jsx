@@ -8,10 +8,14 @@ import {
 } from "react-router-dom";
 import Error from './components/Error/Error.jsx';
 import Home from './components/Home/Home.jsx';
-import News from './components/News/News';
-import Destination from './components/Destination/Destination';
-import Blog from './components/Blog/Blog';
-import Contact from './components/Contact/Contact';
+import News from './components/News/News.jsx';
+import Destination from './components/Destination/Destination.jsx';
+import Blog from './components/Blog/Blog.jsx';
+import Contact from './components/Contact/Contact.jsx';
+import Register from './components/Register/Register.jsx';
+import Login from './components/Login/Login.jsx';
+import Forgot from './components/Forgot/Forgot.jsx';
+import Booking from './components/Booking/Booking.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,21 +28,37 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: "/news",
+        path: "booking",
+        element: <Booking></Booking>
+      },
+      {
+        path: "news",
         element: <News></News>
       },
       {
-        path: "/destination",
+        path: "destination",
         element: <Destination></Destination>
       },
       {
-        path: "/blog",
+        path: "blog",
         element: <Blog></Blog>
       },
       {
-        path: "/contact",
+        path: "contact",
         element: <Contact></Contact>
-      }
+      },
+      {
+        path: "register",
+        element: <Register></Register>
+      },
+      {
+        path: "login",
+        element: <Login></Login>
+      },
+      {
+        path: "forgot",
+        element: <Forgot></Forgot>
+      },
     ],
   }
 ])

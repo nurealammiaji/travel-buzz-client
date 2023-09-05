@@ -4,7 +4,7 @@ const Blog = () => {
     return (
         <div>
             <br /><br />
-            <h3 className="text-xl"></h3>
+            <h3 className="text-xl">Blog</h3>
         </div>
     );
 };
