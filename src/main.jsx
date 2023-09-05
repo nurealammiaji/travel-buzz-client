@@ -16,6 +16,8 @@ import Register from './components/Register/Register.jsx';
 import Login from './components/Login/Login.jsx';
 import Forgot from './components/Forgot/Forgot.jsx';
 import Booking from './components/Booking/Booking.jsx';
+import Providers from './Providers/Providers.jsx';
+import Private from './components/Private/Private';
 
 const router = createBrowserRouter([
   {
@@ -29,19 +31,19 @@ const router = createBrowserRouter([
       },
       {
         path: "booking",
-        element: <Booking></Booking>
+        element: <Private><Booking></Booking></Private>
       },
       {
         path: "news",
-        element: <News></News>
+        element: <Private><News></News></Private>
       },
       {
         path: "destination",
-        element: <Destination></Destination>
+        element: <Private><Destination></Destination></Private>
       },
       {
         path: "blog",
-        element: <Blog></Blog>
+        element: <Private><Blog></Blog></Private>
       },
       {
         path: "contact",
@@ -65,6 +67,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <Providers>
+      <RouterProvider router={router}></RouterProvider>
+    </Providers>
   </React.StrictMode>,
 )
