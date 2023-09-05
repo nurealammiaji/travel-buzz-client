@@ -1,6 +1,10 @@
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../firebase/firebase.config';
 import { createContext, useEffect, useState } from "react";
+import rectangleOne from "../assets/Rectangle1.png";
+import rectangleTwo from "../assets/Rectangle2.png";
+import rectangleThree from "../assets/Rectangle3.png";
+import rectangleFour from "../assets/Rectangle4.png";
 
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -11,6 +15,19 @@ const Providers = ({ children }) => {
 
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
+    const [background, setBackground] = useState(rectangleOne);
+
+    const backgroundChanger = (bg) => {
+        if (bg === "saintmartin") {
+            setBackground(rectangleOne);
+        }
+        else if (bg === "sreemongol") {
+            setBackground(rectangleTwo);
+        }
+        else if (bg === "sundorbon") {
+            setBackground(rectangleThree);
+        }
+    }
 
     const register = (email, password) => {
         setLoading(true);
@@ -60,6 +77,8 @@ const Providers = ({ children }) => {
         githubLogin,
         forgot,
         logout,
+        background,
+        backgroundChanger,
     }
 
     return (
