@@ -38,11 +38,11 @@ const Navigation = () => {
                             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                                 <li className="text-gray-600 hover:text-blue-600">
                                     <div className="form-control">
-                                        <input type="text" placeholder="Search" className="w-auto input input-bordered" />
+                                        <input type="text" placeholder="Search" className="mx-auto w-52 md:w-auto input input-bordered" />
                                     </div>
                                 </li>
                                 <li className="text-gray-600 hover:text-blue-600">
-                                    <NavLink to="">News</NavLink>
+                                    <NavLink to="/news">News</NavLink>
                                 </li>
                                 <li className="text-gray-600 hover:text-blue-600">
                                     <NavLink to="/destination">Destination</NavLink>
