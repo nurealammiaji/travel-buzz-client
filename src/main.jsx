@@ -32,36 +32,36 @@ const router = createBrowserRouter([
       {
         path: "booking",
         element: <Private><Booking></Booking></Private>
-      },
-      {
-        path: "news",
-        element: <Private><News></News></Private>
-      },
-      {
-        path: "destination",
-        element: <Private><Destination></Destination></Private>
-      },
-      {
-        path: "blog",
-        element: <Private><Blog></Blog></Private>
-      },
-      {
-        path: "contact",
-        element: <Contact></Contact>
-      },
-      {
-        path: "register",
-        element: <Register></Register>
-      },
-      {
-        path: "login",
-        element: <Login></Login>
-      },
-      {
-        path: "forgot",
-        element: <Forgot></Forgot>
-      },
-    ],
+      }
+    ]
+  },
+  {
+    path: "news",
+    element: <Private><News></News></Private>
+  },
+  {
+    path: "destination",
+    element: <Private><Destination></Destination></Private>
+  },
+  {
+    path: "blog",
+    element: <Private><Blog></Blog></Private>
+  },
+  {
+    path: "contact",
+    element: <Contact></Contact>
+  },
+  {
+    path: "register",
+    element: <Register></Register>
+  },
+  {
+    path: "login",
+    element: <Login></Login>
+  },
+  {
+    path: "forgot",
+    element: <Forgot></Forgot>
   }
 ])
 

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/Providers";
 import { FaGoogle, FaGithub } from "react-icons/fa6";
+import Navigation from "../Navigation/Navigation";
 
 const Login = () => {
 
@@ -52,6 +53,7 @@ const Login = () => {
 
     return (
         <div>
+            <Navigation></Navigation>
             <br /><br />
             <div className="py-10 rounded hero bg-base-200">
                 <div className="flex">
@@ -68,9 +70,14 @@ const Login = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" name="password" placeholder="password" className="input input-bordered" />
-                                <label className="label">
-                                    <Link to="/forgot" className="label-text-alt link link-hover">Forgot password?</Link>
-                                </label>
+                                <div className="flex justify-between mt-2">
+                                    <label className="label">
+                                        <Link to="/register" className="label-text-alt link link-hover">Need Account?</Link>
+                                    </label>
+                                    <label className="label">
+                                        <Link to="/forgot" className="label-text-alt link link-hover">Forgot password?</Link>
+                                    </label>
+                                </div>
                             </div>
                             <div>
                                 <div className="mt-3 form-control">

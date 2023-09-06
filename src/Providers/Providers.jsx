@@ -2,7 +2,7 @@ import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword,
 import app from '../firebase/firebase.config';
 import { createContext, useEffect, useState } from "react";
 import rectangleOne from "../assets/Rectangle1.png";
-import rectangleTwo from "../assets/Rectangle2.png";
+import rectangleTwo from "../assets/Rectangle2.jpg";
 import rectangleThree from "../assets/Rectangle3.png";
 import rectangleFour from "../assets/Rectangle4.png";
 

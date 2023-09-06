@@ -18,7 +18,7 @@ const Home = () => {
                         <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                         <button className="btn btn-primary">Get Started</button>
                     </div>
-                    <div className="max-w-sm md:w-4/12 hero-content">
+                    <div className="max-w-sm md:w-4/12 hero-content hover:border-yellow-400 hover:border-4">
                         <button onClick={() => backgroundChanger("saintmartin")}>
                             <img src={saintmartinCard} alt="" />
                         </button>
