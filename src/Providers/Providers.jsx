@@ -1,10 +1,10 @@
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../firebase/firebase.config';
 import { createContext, useEffect, useState } from "react";
-import rectangleOne from "../assets/Rectangle1.jpg";
-import rectangleTwo from "../assets/Rectangle2.jpg";
-import rectangleThree from "../assets/Rectangle3.jpg";
-import rectangleFour from "../assets/Rectangle4.png";
+import saintmartin from "../assets/saintmartin.jpg";
+import rangamati from "../assets/rangamati.jpg";
+import sreemongol from "../assets/sreemongol.jpg";
+import sundorban from "../assets/sundorban.jpg";
 
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -15,17 +15,20 @@ const Providers = ({ children }) => {
 
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
-    const [background, setBackground] = useState(rectangleOne);
+    const [background, setBackground] = useState(saintmartin);
 
     const backgroundChanger = (bg) => {
         if (bg === "saintmartin") {
-            setBackground(rectangleOne);
+            setBackground(saintmartin);
+        }
+        else if (bg === "rangamati") {
+            setBackground(rangamati);
         }
         else if (bg === "sreemongol") {
-            setBackground(rectangleTwo);
+            setBackground(sreemongol);
         }
-        else if (bg === "sundorbon") {
-            setBackground(rectangleThree);
+        else if (bg === "sundorban") {
+            setBackground(sundorban);
         }
     }
 

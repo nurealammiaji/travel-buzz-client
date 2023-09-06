@@ -1,64 +1,86 @@
 import { useContext } from "react";
-import saintmartinCard from "../../assets/Saintmartin.png";
-import sreemongolCard from "../../assets/Sreemongol.png";
-import sundorbonCard from "../../assets/sundorbon.png";
+import saintmartin from "../../assets/saintmartin.jpg";
+import rangamati from "../../assets/rangamati.jpg";
+import sreemongol from "../../assets/sreemongol.jpg";
+import sundorban from "../../assets/sundorban.jpg";
 import { AuthContext } from '../../Providers/Providers';
-import 'keen-slider/keen-slider.min.css';
-import { useKeenSlider } from 'keen-slider/react';
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+
 
 const Home = () => {
 
     const { backgroundChanger } = useContext(AuthContext);
 
-    const [sliderRef, instanceRef] = useKeenSlider(
-        {
-            slideChanged() {
-                console.log('slide changed')
+    const [sliderRef] = useKeenSlider({
+        breakpoints: {
+            "(min-width: 400px)": {
+                slides: { perView: 2, spacing: 5 },
+            },
+            "(min-width: 1000px)": {
+                slides: { perView: 3, spacing: 10 },
             },
         },
-        [
-            // add plugins here
-        ]
-    )
+        slides: { perView: 1 },
+    })
+
 
     return (
         <div>
             <br /><br />
-            <div className="min-h-screen hero">
-                <div className="flex-none md:flex text-neutral-content">
-                    <div className="max-w-md">
-                        <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                        <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button className="btn btn-primary">Get Started</button>
-                    </div>
-                    <div>
-                        <div ref={sliderRef} className="keen-slider">
-                            <div className="keen-slider__slide">
-                                <button className="border-4 border-transparent hover:border-yellow-400 rounded-3xl" onClick={() => backgroundChanger("saintmartin")}>
-                                    <div className="bg-transparent card">
-                                        <figure><img src={saintmartinCard} alt="" /></figure>
+            <div>
+                <div className="min-h-screen hero">
+                    <div className="grid grid-cols-1 md:grid-cols-3 hero-content lg:flex-row">
+                        <div className="col-span-1 text-center">
+                            <h1 className="text-5xl font-bold">Login now!</h1>
+                            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        </div>
+                        <div className="w-full col-span-2">
+                            <div className="card-body">
+                                <div>
+                                    <div ref={sliderRef} className="keen-slider">
+                                        <div className="keen-slider__slide number-slide1">
+                                            <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger("saintmartin")}>
+                                                <div className="bg-transparent card">
+                                                    <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={saintmartin} alt="" /></figure>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div className="keen-slider__slide number-slide2">
+                                            <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger("rangamati")}>
+                                                <div className="bg-transparent card">
+                                                    <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={rangamati} alt="" /></figure>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div className="keen-slider__slide number-slide3">
+                                            <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger("sreemongol")}>
+                                                <div className="bg-transparent card">
+                                                    <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={sreemongol} alt="" /></figure>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div className="keen-slider__slide number-slide4">
+                                            <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger("sundorban")}>
+                                                <div className="bg-transparent card">
+                                                    <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={sundorban} alt="" /></figure>
+                                                </div>
+                                            </button>
+                                        </div>
                                     </div>
-                                </button>
-                            </div>
-                            <div className="keen-slider__slide">
-                                <button className="border-4 border-transparent hover:border-yellow-400 rounded-3xl" onClick={() => backgroundChanger("sreemongol")}>
-                                    <div className="bg-transparent card">
-                                        <figure><img src={sreemongolCard} alt="" /></figure>
+                                    <br /><br />
+                                    <div className="text-white md:text-left [&>*]:mx-3">
+                                        <button className="btn-circle btn"><FaAngleLeft className="text-2xl" /></button>
+                                        <button className="btn-circle btn"><FaAngleRight className="text-2xl" /></button>
                                     </div>
-                                </button>
-                            </div>
-                            <div className="keen-slider__slide">
-                                <button className="border-4 border-transparent hover:border-yellow-400 rounded-3xl" onClick={() => backgroundChanger("sundorbon")}>
-                                    <div className="bg-transparent card">
-                                        <figure><img src={sundorbonCard} alt="" /></figure>
-                                    </div>
-                                </button>
-
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <br /><br />
         </div>
     );
 };
