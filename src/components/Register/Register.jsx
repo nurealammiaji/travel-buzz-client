@@ -58,7 +58,7 @@ const Register = () => {
         <div>
             <Navigation></Navigation>
             <br /><br />
-            <div className="py-10 rounded hero bg-base-200">
+            <div className="py-10 rounded hero">
                 <div className="flex">
                     <div className="flex-shrink-0 w-10/12 max-w-sm mx-auto shadow-2xl md:w-full card bg-base-100">
                         <form onSubmit={registerHandler} className="card-body">

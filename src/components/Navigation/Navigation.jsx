@@ -38,27 +38,27 @@ const Navigation = () => {
                                 }`}
                         >
                             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                                <li className="text-gray-600 hover:text-blue-600">
+                                <li className="font-semibold text-gray-600 hover:text-yellow-400">
                                     <div className="form-control">
                                         <input type="text" placeholder="Search" className="mx-auto w-52 md:w-auto input input-bordered" />
                                     </div>
                                 </li>
-                                <li className="text-gray-600 hover:text-blue-600">
+                                <li className="font-semibold text-gray-600 hover:text-yellow-400">
                                     <NavLink to="/news">News</NavLink>
                                 </li>
-                                <li className="text-gray-600 hover:text-blue-600">
+                                <li className="font-semibold text-gray-600 hover:text-yellow-400">
                                     <NavLink to="/destination">Destination</NavLink>
                                 </li>
-                                <li className="text-gray-600 hover:text-blue-600">
+                                <li className="font-semibold text-gray-600 hover:text-yellow-400">
                                     <NavLink to="/blog">Blog</NavLink>
                                 </li>
-                                <li className="text-gray-600 hover:text-blue-600">
+                                <li className="font-semibold text-gray-600 hover:text-yellow-400">
                                     <NavLink to="/contact">Contact</NavLink>
                                 </li>
                                 {
-                                    (user) ? <li className="text-gray-600 hover:text-blue-600">
-                                        <Link to="/profile" className="mr-3 text-gray-600 bg-transparent bg-yellow-400 btn btn-neutral btn-circle hover:text-yellow-400">User</Link>
-                                        <button onClick={logout} className="text-gray-600 bg-transparent bg-yellow-400 btn btn-neutral hover:text-yellow-400">Logout</button>
+                                    (user) ? <li className="font-semibold text-gray-600 hover:text-yellow-400">
+                                        <Link to="/profile" className="mr-3 text-gray-600 bg-transparent bg-yellow-400 border-2 btn btn-neutral btn-circle hover:border-yellow-400 hover:text-yellow-400 ">User</Link>
+                                        <button onClick={logout} className="text-gray-600 bg-yellow-400 border-2 hover:border-yellow-400 btn btn-neutral hover:text-yellow-400 ">Logout</button>
                                     </li> : ""
                                 }
                             </ul>

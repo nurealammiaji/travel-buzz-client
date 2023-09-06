@@ -28,11 +28,10 @@ const Home = () => {
 
     return (
         <div>
-            <br /><br />
             <div>
                 <div className="min-h-screen hero">
                     <div className="grid grid-cols-1 md:grid-cols-3 hero-content lg:flex-row">
-                        <div className="col-span-1 text-center">
+                        <div className="col-span-1 text-center text-white">
                             <h1 className="text-5xl font-bold">Login now!</h1>
                             <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                         </div>
@@ -42,30 +41,34 @@ const Home = () => {
                                     <div ref={sliderRef} className="keen-slider">
                                         <div className="keen-slider__slide number-slide1">
                                             <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger("saintmartin")}>
-                                                <div className="bg-transparent card">
+                                                <div className="relative bg-transparent card">
                                                     <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={saintmartin} alt="" /></figure>
                                                 </div>
+                                                <h3 className="absolute pl-2 text-2xl font-extrabold text-white bottom-5">Saintmartin</h3>
                                             </button>
                                         </div>
                                         <div className="keen-slider__slide number-slide2">
                                             <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger("rangamati")}>
-                                                <div className="bg-transparent card">
+                                                <div className="relative bg-transparent card">
                                                     <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={rangamati} alt="" /></figure>
                                                 </div>
+                                                <h3 className="absolute pl-2 text-2xl font-extrabold text-white bottom-5">Rangamati</h3>
                                             </button>
                                         </div>
                                         <div className="keen-slider__slide number-slide3">
                                             <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger("sreemongol")}>
-                                                <div className="bg-transparent card">
+                                                <div className="relative bg-transparent card">
                                                     <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={sreemongol} alt="" /></figure>
                                                 </div>
+                                                <h3 className="absolute pl-2 text-2xl font-extrabold text-white bottom-5">Sreemongol</h3>
                                             </button>
                                         </div>
                                         <div className="keen-slider__slide number-slide4">
                                             <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger("sundorban")}>
-                                                <div className="bg-transparent card">
+                                                <div className="relative bg-transparent card">
                                                     <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={sundorban} alt="" /></figure>
                                                 </div>
+                                                <h3 className="absolute pl-2 text-2xl font-extrabold text-white bottom-5">Sundorban</h3>
                                             </button>
                                         </div>
                                     </div>
@@ -80,7 +83,6 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <br /><br />
         </div>
     );
 };

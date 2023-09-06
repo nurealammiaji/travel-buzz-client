@@ -38,26 +38,27 @@ const NavWhite = () => {
                                 }`}
                         >
                             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                                <li className="hover:text-blue-600">
+                                <li className="font-semibold hover:text-yellow-400">
                                     <div className="form-control">
                                         <input type="text" placeholder="Search" className="mx-auto bg-transparent border-white w-52 md:w-auto input input-bordered" />
                                     </div>
                                 </li>
-                                <li className="hover:text-blue-600">
+                                <li className="font-semibold hover:text-yellow-400">
                                     <NavLink to="/news">News</NavLink>
                                 </li>
-                                <li className="hover:text-blue-600">
+                                <li className="font-semibold hover:text-yellow-400">
                                     <NavLink to="/destination">Destination</NavLink>
                                 </li>
-                                <li className="hover:text-blue-600">
+                                <li className="font-semibold hover:text-yellow-400">
                                     <NavLink to="/blog">Blog</NavLink>
                                 </li>
-                                <li className="hover:text-blue-600">
+                                <li className="font-semibold hover:text-yellow-400">
                                     <NavLink to="/contact">Contact</NavLink>
                                 </li>
                                 {
-                                    (user) ? <li className="text-white hover:text-blue-600">
-                                        <button onClick={logout} className="text-white bg-transparent btn">Logout</button>
+                                    (user) ? <li className="font-semibold text-gray-600 hover:text-yellow-400">
+                                        <Link to="/profile" className="mr-3 text-white bg-transparent border-2 border-white btn btn-neutral btn-circle hover:text-yellow-400 hover:border-yellow-400">User</Link>
+                                        <button onClick={logout} className="text-white bg-transparent border-2 border-white btn btn-neutral hover:border-yellow-400 hover:text-yellow-400">Logout</button>
                                     </li> : ""
                                 }
                             </ul>
