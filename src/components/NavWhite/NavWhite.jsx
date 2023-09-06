@@ -20,7 +20,7 @@ const NavWhite = () => {
                             </div>
                             <div className="md:hidden">
                                 <button
-                                    className="p-2 rounded-md outline-none focus:border-gray-400 focus:border"
+                                    className="p-2 rounded-md outline-none focus:border-white focus:border"
                                     onClick={() => setNavbar(!navbar)}
                                 >
                                     {navbar ? (
@@ -56,7 +56,7 @@ const NavWhite = () => {
                                     <NavLink to="/contact">Contact</NavLink>
                                 </li>
                                 {
-                                    (user) ? <li className="text-gray-600 hover:text-blue-600">
+                                    (user) ? <li className="text-white hover:text-blue-600">
                                         <button onClick={logout} className="text-white bg-transparent btn">Logout</button>
                                     </li> : ""
                                 }
