@@ -57,7 +57,8 @@ const Navigation = () => {
                                 </li>
                                 {
                                     (user) ? <li className="text-gray-600 hover:text-blue-600">
-                                        <button onClick={logout} className="text-white bg-transparent btn">Logout</button>
+                                        <Link to="/profile" className="mr-3 text-gray-600 bg-transparent bg-yellow-400 btn btn-neutral btn-circle hover:text-yellow-400">User</Link>
+                                        <button onClick={logout} className="text-gray-600 bg-transparent bg-yellow-400 btn btn-neutral hover:text-yellow-400">Logout</button>
                                     </li> : ""
                                 }
                             </ul>

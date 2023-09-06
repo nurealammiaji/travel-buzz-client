@@ -1,9 +1,9 @@
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../firebase/firebase.config';
 import { createContext, useEffect, useState } from "react";
-import rectangleOne from "../assets/Rectangle1.png";
+import rectangleOne from "../assets/Rectangle1.jpg";
 import rectangleTwo from "../assets/Rectangle2.jpg";
-import rectangleThree from "../assets/Rectangle3.png";
+import rectangleThree from "../assets/Rectangle3.jpg";
 import rectangleFour from "../assets/Rectangle4.png";
 
 const auth = getAuth(app);
