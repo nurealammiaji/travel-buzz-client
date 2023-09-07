@@ -23,7 +23,7 @@ const Providers = ({ children }) => {
     const [destination, setDestination] = useState({id: 7, title: "Sajek", details: "Sajek is the place of tea gardens, hills and forest areas on the hills. Within your eyesight you will find green throughout. It is famous for the largest tea gardens of world covered by lush green carpet. One can have a look into the spectacular tea processing at Tea Research Institute. Bangladesh produces and exports a large quantity of high quality tea every year. Most of the tea estates are in Sajek.  It is also called camellia, green carpet or Tea Mountain."});
 
     useEffect(() => {
-        fetch('http://localhost:5000/destinations')
+        fetch('https://travel-buzz-server-nurealammiaji.vercel.app/destinations')
             .then(res => res.json())
             .then(data => setDestinations(data))
     }, [])

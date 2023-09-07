@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       {
         path: "destination/:id",
         element: <DestinationDetails></DestinationDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/destination/${params.id}`)
+        loader: ({params}) => fetch(`https://travel-buzz-server-nurealammiaji.vercel.app/destination/${params.id}`)
       },
       {
         path: "booking",
