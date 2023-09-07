@@ -40,7 +40,7 @@ const Home = () => {
                             {
                                 (destination) ? <div>
                                     <h1 className="text-5xl font-bold">{title}</h1>
-                                    <p className="py-6 ml-5 text-justify">{details.slice(0, 200)}...</p>
+                                    <p className="py-6 ml-5 text-justify">{details.slice(0, 250)}...</p>
                                     <Link to={`/destination/${id}`}><button className="rounded-md btn btn-warning hover:text-base">Booking <FaArrowRight /></button></Link>
                                     </div> : ""
                             }
