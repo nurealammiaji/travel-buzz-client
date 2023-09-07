@@ -3,11 +3,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/Providers";
 import { FaGoogle, FaGithub } from "react-icons/fa6";
 import Navigation from "../Navigation/Navigation";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
 
     const { login, googleLogin, githubLogin } = useContext(AuthContext);
     const [displayError, setDisplayError] = useState(null);
+
+    const errorToast = () => toast("Login Error !!");
+    const successToast = () => toast("Login Successful !!");
 
     const location = useLocation();
     console.log(location);
@@ -21,6 +25,7 @@ const Login = () => {
         const password = form.password.value;
         login(email, password)
             .then(result => {
+                successToast();
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 navigate(from, {replace: true});
@@ -29,6 +34,7 @@ const Login = () => {
                 console.log(error.message);
                 if (error) {
                     setDisplayError(error.message);
+                    errorToast();
                 }
             })
     }
@@ -36,6 +42,7 @@ const Login = () => {
     const googleLoginHandler = () => {
         googleLogin()
             .then(result => {
+                successToast();
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 navigate(from, {replace: true});
@@ -43,12 +50,14 @@ const Login = () => {
             .catch(error => {
                 console.log(error.message);
                 setDisplayError(error.message);
+                errorToast();
             })
     }
 
     const githubLoginHandler = () => {
         githubLogin()
             .then(result => {
+                successToast();
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 navigate(from, {replace: true})
@@ -56,17 +65,20 @@ const Login = () => {
             .catch(error => {
                 console.log(error.message);
                 setDisplayError(error.message);
+                errorToast();
             })
     }
 
     return (
         <div>
+            <Toaster />
             <Navigation></Navigation>
             <br /><br />
             <div className="py-10 rounded hero">
                 <div className="flex">
                     <div className="flex-shrink-0 w-10/12 max-w-sm mx-auto shadow-2xl md:w-full card bg-base-100">
                         <form onSubmit={loginHandler} className="card-body">
+                            {(displayError) && <p className="text-red-500">{displayError}</p>}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>

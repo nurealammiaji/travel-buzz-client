@@ -1,6 +1,5 @@
 import Navigation from "../Navigation/Navigation";
 
-
 const Destination = () => {
     return (
         <div>
