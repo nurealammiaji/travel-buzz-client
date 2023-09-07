@@ -1,4 +1,6 @@
 import { Link, useLoaderData } from 'react-router-dom';
+import { SingleDatePicker } from "react-google-flight-datepicker";
+import "react-google-flight-datepicker/dist/main.css";
 
 const DestinationDetails = () => {
 
@@ -36,13 +38,19 @@ const DestinationDetails = () => {
                                     <label className="label">
                                         <span className="label-text">From</span>
                                     </label>
-                                    <input type="text" placeholder="From" className="input input-bordered" />
+                                    <SingleDatePicker
+                                        startDatePlaceholder=""
+                                        dateFormat="D"
+                                    />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">To</span>
                                     </label>
-                                    <input type="text" placeholder="To" className="input input-bordered" />
+                                    <SingleDatePicker
+                                        startDatePlaceholder=""
+                                        dateFormat="D"
+                                    />
                                 </div>
                             </div>
                             <div className="mt-6 form-control">
