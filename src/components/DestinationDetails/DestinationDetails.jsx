@@ -31,7 +31,7 @@ const DestinationDetails = () => {
                                 <label className="label">
                                     <span className="label-text">Destination</span>
                                 </label>
-                                <input type="text" placeholder="Type Destination" className="input input-bordered" />
+                                <input type="text" placeholder={title} className="input input-bordered" />
                             </div>
                             <div className='grid grid-cols-2 gap-2'>
                                 <div className="form-control">
