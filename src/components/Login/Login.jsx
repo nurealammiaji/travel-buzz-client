@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/Providers";
 import { FaGoogle, FaGithub } from "react-icons/fa6";
 import Navigation from "../Navigation/Navigation";
@@ -9,46 +9,54 @@ const Login = () => {
     const { login, googleLogin, githubLogin } = useContext(AuthContext);
     const [displayError, setDisplayError] = useState(null);
 
+    const location = useLocation();
+    console.log(location);
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || "/";
+
     const loginHandler = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         login(email, password)
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
-        })
-        .catch(error => {
-            console.log(error.message);
-            if (error) {
-                setDisplayError(error.message);
-            }
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, {replace: true});
+            })
+            .catch(error => {
+                console.log(error.message);
+                if (error) {
+                    setDisplayError(error.message);
+                }
+            })
     }
 
     const googleLoginHandler = () => {
         googleLogin()
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
-        })
-        .catch(error => {
-            console.log(error.message);
-            setDisplayError(error.message);
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, {replace: true});
+            })
+            .catch(error => {
+                console.log(error.message);
+                setDisplayError(error.message);
+            })
     }
 
     const githubLoginHandler = () => {
         githubLogin()
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
-        })
-        .catch(error => {
-            console.log(error.message);
-            setDisplayError(error.message);
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, {replace: true})
+            })
+            .catch(error => {
+                console.log(error.message);
+                setDisplayError(error.message);
+            })
     }
 
     return (

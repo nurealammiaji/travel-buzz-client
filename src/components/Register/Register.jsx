@@ -2,13 +2,16 @@ import { useContext, useState } from "react";
 import Navigation from "../Navigation/Navigation";
 import { AuthContext } from "../../Providers/Providers";
 import { FaGoogle, FaGithub } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Register = () => {
 
     const { register, googleLogin, githubLogin } = useContext(AuthContext);
     const [displayError, setDisplayError] = useState(null);
+
+    const navigate = useNavigate();
+    const from = "/";
 
     const registerHandler = (event) => {
         event.preventDefault();
@@ -21,6 +24,7 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                navigate(from, {replace: true});
             })
             .catch(error => {
                 console.log(error.message);
@@ -35,6 +39,7 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                navigate(from, {replace: true});
             })
             .catch(error => {
                 console.log(error.message);
@@ -47,6 +52,7 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                navigate(from, {replace: true});
             })
             .catch(error => {
                 console.log(error.message);
