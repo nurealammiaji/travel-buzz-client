@@ -3,6 +3,9 @@ import saintmartin from "../../assets/saintmartin.jpg";
 import rangamati from "../../assets/rangamati.jpg";
 import sreemongol from "../../assets/srimongol.jpg";
 import sundorban from "../../assets/sundorban.jpg";
+import sitakundo from "../../assets/sitakundo.jpeg";
+import sylhet from "../../assets/sylhet.jpg";
+import sajek from "../../assets/sajek.jpg";
 import { AuthContext } from '../../Providers/Providers';
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -37,7 +40,7 @@ const Home = () => {
                             {
                                 (destination) ? <div>
                                     <h1 className="text-5xl font-bold">{title}</h1>
-                                    <p className="py-6">{details}</p>
+                                    <p className="py-6 ml-5 text-justify">{details.slice(0, 200)}...</p>
                                     <Link to={`/destination/${id}`}><button className="rounded-md btn btn-warning hover:text-base">Booking <FaArrowRight /></button></Link>
                                     </div> : ""
                             }
@@ -76,6 +79,30 @@ const Home = () => {
                                                     <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={sundorban} alt="" /></figure>
                                                 </div>
                                                 <h3 className="absolute pl-2 text-2xl font-extrabold text-white bottom-5">Sundorban</h3>
+                                            </button>
+                                        </div>
+                                        <div className="keen-slider__slide number-slide5">
+                                            <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger(5)}>
+                                                <div className="relative bg-transparent card">
+                                                    <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={sitakundo} alt="" /></figure>
+                                                </div>
+                                                <h3 className="absolute pl-2 text-2xl font-extrabold text-white bottom-5">Sitakundo</h3>
+                                            </button>
+                                        </div>
+                                        <div className="keen-slider__slide number-slide6">
+                                            <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger(6)}>
+                                                <div className="relative bg-transparent card">
+                                                    <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={sylhet} alt="" /></figure>
+                                                </div>
+                                                <h3 className="absolute pl-2 text-2xl font-extrabold text-white bottom-5">Sylhet</h3>
+                                            </button>
+                                        </div>
+                                        <div className="keen-slider__slide number-slide7">
+                                            <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger(7)}>
+                                                <div className="relative bg-transparent card">
+                                                    <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={sajek} alt="" /></figure>
+                                                </div>
+                                                <h3 className="absolute pl-2 text-2xl font-extrabold text-white bottom-5">Sajek</h3>
                                             </button>
                                         </div>
                                     </div>

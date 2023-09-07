@@ -5,6 +5,9 @@ import saintmartin from "../assets/saintmartin.jpg";
 import rangamati from "../assets/rangamati.jpg";
 import srimongol from "../assets/srimongol.jpg";
 import sundorban from "../assets/sundorban.jpg";
+import sitakundo from "../assets/sitakundo.jpeg";
+import sylhet from "../assets/sylhet.jpg";
+import sajek from "../assets/sajek.jpg";
 
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -15,9 +18,9 @@ const Providers = ({ children }) => {
 
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
-    const [background, setBackground] = useState(rangamati);
+    const [background, setBackground] = useState(sajek);
     const [destinations, setDestinations] = useState([]);
-    const [destination, setDestination] = useState({id: 2, title: "Rangamati", details: "Rangamati is the place of tea gardens, hills and forest areas on the hills. Within your eyesight you will find green throughout. It is famous for the largest tea gardens of world covered by lush green carpet. One can have a look into the spectacular tea processing at Tea Research Institute. Bangladesh produces and exports a large quantity of high quality tea every year. Most of the tea estates are in Rangamati.  It is also called camellia, green carpet or Tea Mountain."});
+    const [destination, setDestination] = useState({id: 7, title: "Sajek", details: "Sajek is the place of tea gardens, hills and forest areas on the hills. Within your eyesight you will find green throughout. It is famous for the largest tea gardens of world covered by lush green carpet. One can have a look into the spectacular tea processing at Tea Research Institute. Bangladesh produces and exports a large quantity of high quality tea every year. Most of the tea estates are in Sajek.  It is also called camellia, green carpet or Tea Mountain."});
 
     useEffect(() => {
         fetch('http://localhost:5000/destinations')
@@ -40,6 +43,18 @@ const Providers = ({ children }) => {
         }
         else if (id === 4) {
             setBackground(sundorban);
+            infoChanger(id);
+        }
+        else if (id === 5) {
+            setBackground(sitakundo);
+            infoChanger(id);
+        }
+        else if (id === 6) {
+            setBackground(sylhet);
+            infoChanger(id);
+        }
+        else if (id === 7) {
+            setBackground(sajek);
             infoChanger(id);
         }
     }
