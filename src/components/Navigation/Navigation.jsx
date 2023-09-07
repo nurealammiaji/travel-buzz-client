@@ -3,6 +3,7 @@ import logo from "../../assets/logo.png";
 import { FaBarsStaggered, FaX } from "react-icons/fa6";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/Providers";
+import { FaUserLarge } from "react-icons/fa6";
 
 const Navigation = () => {
 
@@ -56,10 +57,10 @@ const Navigation = () => {
                                     <NavLink to="/contact">Contact</NavLink>
                                 </li>
                                 {
-                                    (user) ? <li className="font-semibold text-gray-600 hover:text-yellow-400">
-                                        <Link to="/profile" className="mr-3 text-gray-600 bg-transparent bg-yellow-400 border-2 btn btn-neutral btn-circle hover:border-yellow-400 hover:text-yellow-400 ">User</Link>
-                                        <button onClick={logout} className="text-gray-600 bg-yellow-400 border-2 hover:border-yellow-400 btn btn-neutral hover:text-yellow-400 ">Logout</button>
-                                    </li> : ""
+                                    (user) ? <li className="p-1 font-semibold text-gray-600 bg-gray-400 border-2 border-black rounded-l-full rounded-3xl hover:text-yellow-400">
+                                        <Link to="/profile" className="mr-3 text-gray-600 bg-transparent bg-yellow-400 border-2 btn btn-neutral btn-circle hover:border-yellow-400 hover:text-yellow-400 btn-sm"><FaUserLarge /></Link>
+                                        <button onClick={logout} className="text-gray-600 bg-yellow-400 border-2 rounded-md hover:border-yellow-400 btn btn-neutral hover:text-yellow-400 btn-sm">Logout</button>
+                                    </li> : <Link to="/login"><button className="text-gray-600 bg-yellow-400 border-none rounded-md btn btn-neutral hover:text-yellow-400 btn-sm">Login</button></Link>
                                 }
                             </ul>
                         </div>

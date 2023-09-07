@@ -18,6 +18,8 @@ import Forgot from './components/Forgot/Forgot.jsx';
 import Booking from './components/Booking/Booking.jsx';
 import Providers from './Providers/Providers.jsx';
 import Private from './components/Private/Private';
+import DestinationDetails from './components/DestinationDetails/DestinationDetails';
+import Profile from './components/Profile/Profile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -41,7 +43,12 @@ const router = createBrowserRouter([
   },
   {
     path: "destination",
-    element: <Private><Destination></Destination></Private>
+    element: <Destination></Destination>
+  },
+  {
+    path: "destination/:id",
+    element: <DestinationDetails></DestinationDetails>,
+    loader: ({params}) => fetch(`http://localhost:5000/destination/${params.id}`)
   },
   {
     path: "blog",
@@ -54,6 +61,10 @@ const router = createBrowserRouter([
   {
     path: "register",
     element: <Register></Register>
+  },
+  {
+    path: "profile",
+    element: <Profile></Profile>
   },
   {
     path: "login",

@@ -1,17 +1,18 @@
 import { useContext } from "react";
 import saintmartin from "../../assets/saintmartin.jpg";
 import rangamati from "../../assets/rangamati.jpg";
-import sreemongol from "../../assets/sreemongol.jpg";
+import sreemongol from "../../assets/srimongol.jpg";
 import sundorban from "../../assets/sundorban.jpg";
 import { AuthContext } from '../../Providers/Providers';
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
-
+import { FaArrowRight, FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Home = () => {
 
-    const { backgroundChanger } = useContext(AuthContext);
+    const { backgroundChanger, destination } = useContext(AuthContext);
+    const { id, title, details } = destination;
 
     const [sliderRef] = useKeenSlider({
         breakpoints: {
@@ -26,21 +27,27 @@ const Home = () => {
     })
 
 
+
     return (
         <div>
             <div>
                 <div className="min-h-screen hero">
-                    <div className="grid grid-cols-1 md:grid-cols-3 hero-content lg:flex-row">
-                        <div className="col-span-1 text-center text-white">
-                            <h1 className="text-5xl font-bold">Login now!</h1>
-                            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:flex-row">
+                        <div className="col-span-1 mt-10 text-center text-white">
+                            {
+                                (destination) ? <div>
+                                    <h1 className="text-5xl font-bold">{title}</h1>
+                                    <p className="py-6">{details}</p>
+                                    <Link to={`/destination/${id}`}><button className="rounded-md btn btn-warning hover:text-base">Booking <FaArrowRight /></button></Link>
+                                    </div> : ""
+                            }
                         </div>
                         <div className="w-full col-span-2">
                             <div className="card-body">
                                 <div>
                                     <div ref={sliderRef} className="keen-slider">
                                         <div className="keen-slider__slide number-slide1">
-                                            <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger("saintmartin")}>
+                                            <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger(1)}>
                                                 <div className="relative bg-transparent card">
                                                     <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={saintmartin} alt="" /></figure>
                                                 </div>
@@ -48,7 +55,7 @@ const Home = () => {
                                             </button>
                                         </div>
                                         <div className="keen-slider__slide number-slide2">
-                                            <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger("rangamati")}>
+                                            <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger(2)}>
                                                 <div className="relative bg-transparent card">
                                                     <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={rangamati} alt="" /></figure>
                                                 </div>
@@ -56,7 +63,7 @@ const Home = () => {
                                             </button>
                                         </div>
                                         <div className="keen-slider__slide number-slide3">
-                                            <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger("sreemongol")}>
+                                            <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger(3)}>
                                                 <div className="relative bg-transparent card">
                                                     <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={sreemongol} alt="" /></figure>
                                                 </div>
@@ -64,7 +71,7 @@ const Home = () => {
                                             </button>
                                         </div>
                                         <div className="keen-slider__slide number-slide4">
-                                            <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger("sundorban")}>
+                                            <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger(4)}>
                                                 <div className="relative bg-transparent card">
                                                     <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={sundorban} alt="" /></figure>
                                                 </div>
