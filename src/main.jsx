@@ -39,20 +39,20 @@ const router = createBrowserRouter([
   },
   {
     path: "news",
-    element: <Private><News></News></Private>
+    element: <News></News>
   },
   {
     path: "destination",
-    element: <Destination></Destination>
+    element: <Private><Destination></Destination></Private>
   },
   {
     path: "destination/:id",
-    element: <DestinationDetails></DestinationDetails>,
+    element: <Private><DestinationDetails></DestinationDetails></Private>,
     loader: ({params}) => fetch(`http://localhost:5000/destination/${params.id}`)
   },
   {
     path: "blog",
-    element: <Private><Blog></Blog></Private>
+    element: <Blog></Blog>
   },
   {
     path: "contact",
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
   },
   {
     path: "profile",
-    element: <Profile></Profile>
+    element: <Private><Profile></Profile></Private>
   },
   {
     path: "login",
