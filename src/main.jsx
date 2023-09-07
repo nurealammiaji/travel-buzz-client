@@ -32,6 +32,15 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
+        path: "destination",
+        element: <Destination></Destination>
+      },
+      {
+        path: "destination/:id",
+        element: <DestinationDetails></DestinationDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/destination/${params.id}`)
+      },
+      {
         path: "booking",
         element: <Private><Booking></Booking></Private>
       }
@@ -40,15 +49,6 @@ const router = createBrowserRouter([
   {
     path: "news",
     element: <News></News>
-  },
-  {
-    path: "destination",
-    element: <Private><Destination></Destination></Private>
-  },
-  {
-    path: "destination/:id",
-    element: <Private><DestinationDetails></DestinationDetails></Private>,
-    loader: ({params}) => fetch(`http://localhost:5000/destination/${params.id}`)
   },
   {
     path: "blog",

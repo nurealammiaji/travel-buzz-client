@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import saintmartin from "../../assets/saintmartin.jpg";
 import rangamati from "../../assets/rangamati.jpg";
-import sreemongol from "../../assets/srimongol.jpg";
+import srimongol from "../../assets/srimongol.jpg";
 import sundorban from "../../assets/sundorban.jpg";
 import sitakundo from "../../assets/sitakundo.jpeg";
 import sylhet from "../../assets/sylhet.jpg";
@@ -28,8 +28,6 @@ const Home = () => {
         },
         slides: { perView: 1 },
     })
-
-
 
     return (
         <div>
@@ -68,9 +66,9 @@ const Home = () => {
                                         <div className="keen-slider__slide number-slide3">
                                             <button className="border-4 border-transparent hover:border-yellow-400 rounded-2xl" onClick={() => backgroundChanger(3)}>
                                                 <div className="relative bg-transparent card">
-                                                    <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={sreemongol} alt="" /></figure>
+                                                    <figure><img className="rounded-2xl" style={{ height: 350, width: 350 }} src={srimongol} alt="" /></figure>
                                                 </div>
-                                                <h3 className="absolute pl-2 text-2xl font-extrabold text-white bottom-5">Sreemongol</h3>
+                                                <h3 className="absolute pl-2 text-2xl font-extrabold text-white bottom-5">Srimongol</h3>
                                             </button>
                                         </div>
                                         <div className="keen-slider__slide number-slide4">
